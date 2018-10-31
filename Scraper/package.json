@@ -1,0 +1,15 @@
+{
+  "name": "docker-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "./node_modules/@lassehaslev/executor/dist/app.js \"docker-compose restart web \" --watch=\"app/**.go\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@lassehaslev/executor": "^1.0.1"
+  }
+}
