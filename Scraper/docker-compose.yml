@@ -5,24 +5,7 @@ services:
     build: web
     ports:
       - "8080:8080"
-    links:
-      - db
     volumes:
-      - "./app:/go/src/app" #共有フォルダの設定
-    command: go run main.go
-
-  db:
-    build: mysql
-    ports:
-      - "3306:3306"
-    environment:
-      - "MYSQL_USER=root"
-      - "MYSQL_ROOT_PASSWORD=Pass4Local"
-      - "MYSQL_DATABASE=localdb"
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --skip-character-set-client-handshake
-    volumes:
-      - "./db-data:/var/lib/mysql"
-      # 初期設定を読み込む
-      - "./mysql/my.cnf:/etc/mysql/my.conf"
-      # MySQL起動時にDBを作成する
-      - "./mysql/init/:/docker-entrypoint-initdb.d"
+      - "./app:/go/src/app"
+    # command: go run main.go
+    tty: true

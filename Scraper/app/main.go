@@ -1,28 +1,32 @@
 package main
 
 import (
-    "net/http"
-    "io/ioutil"
+		"github.com/PuerkitoBio/goquery"
+    "strings"
     "fmt"
 )
 
 func main() {
-  http.HandleFunc("/", handler)
-  http.ListenAndServe(":8080", nil)
-}
-
-func handler(w http.ResponseWriter, r *http.Request) {
-  url := "https://kushi-tanaka.com/news/"  // アクセスするURL
-
-  resp, err := http.Get(url)      // GETリクエストでアクセスする
-  if err != nil {                 // err ってのはエラーの時にエラーの内容が入ってくる
-      panic(err)                  // panicは処理を中断してエラーの中身を出力する
-  }
-  defer resp.Body.Close()         // 関数が終了するとクローズする
-
-  byteArray, err := ioutil.ReadAll(resp.Body) // 帰ってきたレスポンスの中身を取り出す
+  doc, err := goquery.NewDocument("https://kushi-tanaka.com/news/")
   if err != nil {
-      panic(err)
+		panic(err)
   }
-  fmt.Fprintf(w, string(byteArray))
+
+	var target string = ""
+	var link string = ""
+
+	doc.Find("div#news-wrap > div > section.news-box span.icon").Each(func(_ int, s *goquery.Selection) {
+		text := strings.TrimSpace(s.Text())
+		if text == "キャンペーン" {
+			ps := s.Parent().Parent().Parent().Find("dt > a")
+			target, _ = ps.Html()
+			link, _  = ps.Attr("href")
+			return
+		}
+  })
+
+	target = strings.TrimSpace(target)
+	link = strings.TrimSpace(link)
+	fmt.Print(target)
+	fmt.Print(link)
 }
