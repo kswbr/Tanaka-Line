@@ -8,7 +8,7 @@ pb "../pb"
 )
 func main() {
     //sampleなのでwithInsecure
-    conn, err := grpc.Dial("127.0.0.1:19003", grpc.WithInsecure())
+    conn, err := grpc.Dial("127.0.0.1:5000", grpc.WithInsecure())
     if err != nil {
         log.Fatal("client connection error:", err)
     }

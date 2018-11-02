@@ -13,4 +13,4 @@ RUN apk add --update --no-cache \
 RUN mkdir /go/src/app
 WORKDIR /go/src/app
 
-EXPOSE 8080
+EXPOSE 5000
