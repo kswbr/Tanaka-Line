@@ -22,38 +22,38 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-type GetLatestTanakaNewsMessage struct {
+type GetLatestNewsMessage struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetLatestTanakaNewsMessage) Reset()         { *m = GetLatestTanakaNewsMessage{} }
-func (m *GetLatestTanakaNewsMessage) String() string { return proto.CompactTextString(m) }
-func (*GetLatestTanakaNewsMessage) ProtoMessage()    {}
-func (*GetLatestTanakaNewsMessage) Descriptor() ([]byte, []int) {
+func (m *GetLatestNewsMessage) Reset()         { *m = GetLatestNewsMessage{} }
+func (m *GetLatestNewsMessage) String() string { return proto.CompactTextString(m) }
+func (*GetLatestNewsMessage) ProtoMessage()    {}
+func (*GetLatestNewsMessage) Descriptor() ([]byte, []int) {
 	return fileDescriptor_df7d735c7715a3d8, []int{0}
 }
 
-func (m *GetLatestTanakaNewsMessage) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetLatestTanakaNewsMessage.Unmarshal(m, b)
+func (m *GetLatestNewsMessage) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetLatestNewsMessage.Unmarshal(m, b)
 }
-func (m *GetLatestTanakaNewsMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetLatestTanakaNewsMessage.Marshal(b, m, deterministic)
+func (m *GetLatestNewsMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetLatestNewsMessage.Marshal(b, m, deterministic)
 }
-func (m *GetLatestTanakaNewsMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetLatestTanakaNewsMessage.Merge(m, src)
+func (m *GetLatestNewsMessage) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetLatestNewsMessage.Merge(m, src)
 }
-func (m *GetLatestTanakaNewsMessage) XXX_Size() int {
-	return xxx_messageInfo_GetLatestTanakaNewsMessage.Size(m)
+func (m *GetLatestNewsMessage) XXX_Size() int {
+	return xxx_messageInfo_GetLatestNewsMessage.Size(m)
 }
-func (m *GetLatestTanakaNewsMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetLatestTanakaNewsMessage.DiscardUnknown(m)
+func (m *GetLatestNewsMessage) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetLatestNewsMessage.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetLatestTanakaNewsMessage proto.InternalMessageInfo
+var xxx_messageInfo_GetLatestNewsMessage proto.InternalMessageInfo
 
-type LatestTanakaNewsResponse struct {
+type LatestNewsResponse struct {
 	Title                string   `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Link                 string   `protobuf:"bytes,2,opt,name=link,proto3" json:"link,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -61,39 +61,39 @@ type LatestTanakaNewsResponse struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *LatestTanakaNewsResponse) Reset()         { *m = LatestTanakaNewsResponse{} }
-func (m *LatestTanakaNewsResponse) String() string { return proto.CompactTextString(m) }
-func (*LatestTanakaNewsResponse) ProtoMessage()    {}
-func (*LatestTanakaNewsResponse) Descriptor() ([]byte, []int) {
+func (m *LatestNewsResponse) Reset()         { *m = LatestNewsResponse{} }
+func (m *LatestNewsResponse) String() string { return proto.CompactTextString(m) }
+func (*LatestNewsResponse) ProtoMessage()    {}
+func (*LatestNewsResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_df7d735c7715a3d8, []int{1}
 }
 
-func (m *LatestTanakaNewsResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_LatestTanakaNewsResponse.Unmarshal(m, b)
+func (m *LatestNewsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LatestNewsResponse.Unmarshal(m, b)
 }
-func (m *LatestTanakaNewsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_LatestTanakaNewsResponse.Marshal(b, m, deterministic)
+func (m *LatestNewsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LatestNewsResponse.Marshal(b, m, deterministic)
 }
-func (m *LatestTanakaNewsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LatestTanakaNewsResponse.Merge(m, src)
+func (m *LatestNewsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LatestNewsResponse.Merge(m, src)
 }
-func (m *LatestTanakaNewsResponse) XXX_Size() int {
-	return xxx_messageInfo_LatestTanakaNewsResponse.Size(m)
+func (m *LatestNewsResponse) XXX_Size() int {
+	return xxx_messageInfo_LatestNewsResponse.Size(m)
 }
-func (m *LatestTanakaNewsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_LatestTanakaNewsResponse.DiscardUnknown(m)
+func (m *LatestNewsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_LatestNewsResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_LatestTanakaNewsResponse proto.InternalMessageInfo
+var xxx_messageInfo_LatestNewsResponse proto.InternalMessageInfo
 
-func (m *LatestTanakaNewsResponse) GetTitle() string {
+func (m *LatestNewsResponse) GetTitle() string {
 	if m != nil {
 		return m.Title
 	}
 	return ""
 }
 
-func (m *LatestTanakaNewsResponse) GetLink() string {
+func (m *LatestNewsResponse) GetLink() string {
 	if m != nil {
 		return m.Link
 	}
@@ -101,23 +101,23 @@ func (m *LatestTanakaNewsResponse) GetLink() string {
 }
 
 func init() {
-	proto.RegisterType((*GetLatestTanakaNewsMessage)(nil), "GetLatestTanakaNewsMessage")
-	proto.RegisterType((*LatestTanakaNewsResponse)(nil), "LatestTanakaNewsResponse")
+	proto.RegisterType((*GetLatestNewsMessage)(nil), "GetLatestNewsMessage")
+	proto.RegisterType((*LatestNewsResponse)(nil), "LatestNewsResponse")
 }
 
 func init() { proto.RegisterFile("tanaka.proto", fileDescriptor_df7d735c7715a3d8) }
 
 var fileDescriptor_df7d735c7715a3d8 = []byte{
-	// 144 bytes of a gzipped FileDescriptorProto
+	// 140 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x29, 0x49, 0xcc, 0x4b,
-	0xcc, 0x4e, 0xd4, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x57, 0x92, 0xe1, 0x92, 0x72, 0x4f, 0x2d, 0xf1,
-	0x49, 0x2c, 0x49, 0x2d, 0x2e, 0x09, 0x01, 0x4b, 0xf8, 0xa5, 0x96, 0x17, 0xfb, 0xa6, 0x16, 0x17,
-	0x27, 0xa6, 0xa7, 0x2a, 0xb9, 0x70, 0x49, 0xa0, 0x4b, 0x05, 0xa5, 0x16, 0x17, 0xe4, 0xe7, 0x15,
-	0xa7, 0x0a, 0x89, 0x70, 0xb1, 0x96, 0x64, 0x96, 0xe4, 0xa4, 0x4a, 0x30, 0x2a, 0x30, 0x6a, 0x70,
-	0x06, 0x41, 0x38, 0x42, 0x42, 0x5c, 0x2c, 0x39, 0x99, 0x79, 0xd9, 0x12, 0x4c, 0x60, 0x41, 0x30,
-	0xdb, 0x28, 0x80, 0x8b, 0xd9, 0x39, 0xb1, 0x44, 0xc8, 0x93, 0x8b, 0xd7, 0x3d, 0x15, 0xc9, 0x24,
-	0x21, 0x69, 0x3d, 0xdc, 0x56, 0x4b, 0x49, 0xea, 0xe1, 0xb2, 0x59, 0x89, 0x21, 0x89, 0x0d, 0xec,
-	0x78, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0xbb, 0xbb, 0xed, 0x74, 0xcc, 0x00, 0x00, 0x00,
+	0xcc, 0x4e, 0xd4, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x57, 0x12, 0xe3, 0x12, 0x71, 0x4f, 0x2d, 0xf1,
+	0x49, 0x2c, 0x49, 0x2d, 0x2e, 0xf1, 0x4b, 0x2d, 0x2f, 0xf6, 0x4d, 0x2d, 0x2e, 0x4e, 0x4c, 0x4f,
+	0x55, 0xb2, 0xe3, 0x12, 0x42, 0x08, 0x06, 0xa5, 0x16, 0x17, 0xe4, 0xe7, 0x15, 0xa7, 0x0a, 0x89,
+	0x70, 0xb1, 0x96, 0x64, 0x96, 0xe4, 0xa4, 0x4a, 0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0x41, 0x38,
+	0x42, 0x42, 0x5c, 0x2c, 0x39, 0x99, 0x79, 0xd9, 0x12, 0x4c, 0x60, 0x41, 0x30, 0xdb, 0xc8, 0x91,
+	0x8b, 0x2d, 0x04, 0x6c, 0x8f, 0x90, 0x39, 0x17, 0xbb, 0x7b, 0x2a, 0xd8, 0x18, 0x21, 0x51, 0x3d,
+	0x6c, 0x76, 0x49, 0x09, 0xeb, 0x61, 0x5a, 0xa5, 0xc4, 0x90, 0xc4, 0x06, 0x76, 0xa1, 0x31, 0x20,
+	0x00, 0x00, 0xff, 0xff, 0xd1, 0x6d, 0xd8, 0x20, 0xb1, 0x00, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -128,64 +128,64 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// CatClient is the client API for Cat service.
+// TanakaClient is the client API for Tanaka service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type CatClient interface {
-	GetTanakaNews(ctx context.Context, in *GetLatestTanakaNewsMessage, opts ...grpc.CallOption) (*LatestTanakaNewsResponse, error)
+type TanakaClient interface {
+	GetNews(ctx context.Context, in *GetLatestNewsMessage, opts ...grpc.CallOption) (*LatestNewsResponse, error)
 }
 
-type catClient struct {
+type tanakaClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewCatClient(cc *grpc.ClientConn) CatClient {
-	return &catClient{cc}
+func NewTanakaClient(cc *grpc.ClientConn) TanakaClient {
+	return &tanakaClient{cc}
 }
 
-func (c *catClient) GetTanakaNews(ctx context.Context, in *GetLatestTanakaNewsMessage, opts ...grpc.CallOption) (*LatestTanakaNewsResponse, error) {
-	out := new(LatestTanakaNewsResponse)
-	err := c.cc.Invoke(ctx, "/Cat/GetTanakaNews", in, out, opts...)
+func (c *tanakaClient) GetNews(ctx context.Context, in *GetLatestNewsMessage, opts ...grpc.CallOption) (*LatestNewsResponse, error) {
+	out := new(LatestNewsResponse)
+	err := c.cc.Invoke(ctx, "/Tanaka/GetNews", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CatServer is the server API for Cat service.
-type CatServer interface {
-	GetTanakaNews(context.Context, *GetLatestTanakaNewsMessage) (*LatestTanakaNewsResponse, error)
+// TanakaServer is the server API for Tanaka service.
+type TanakaServer interface {
+	GetNews(context.Context, *GetLatestNewsMessage) (*LatestNewsResponse, error)
 }
 
-func RegisterCatServer(s *grpc.Server, srv CatServer) {
-	s.RegisterService(&_Cat_serviceDesc, srv)
+func RegisterTanakaServer(s *grpc.Server, srv TanakaServer) {
+	s.RegisterService(&_Tanaka_serviceDesc, srv)
 }
 
-func _Cat_GetTanakaNews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLatestTanakaNewsMessage)
+func _Tanaka_GetNews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestNewsMessage)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatServer).GetTanakaNews(ctx, in)
+		return srv.(TanakaServer).GetNews(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Cat/GetTanakaNews",
+		FullMethod: "/Tanaka/GetNews",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatServer).GetTanakaNews(ctx, req.(*GetLatestTanakaNewsMessage))
+		return srv.(TanakaServer).GetNews(ctx, req.(*GetLatestNewsMessage))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Cat_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "Cat",
-	HandlerType: (*CatServer)(nil),
+var _Tanaka_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "Tanaka",
+	HandlerType: (*TanakaServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetTanakaNews",
-			Handler:    _Cat_GetTanakaNews_Handler,
+			MethodName: "GetNews",
+			Handler:    _Tanaka_GetNews_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1,33 +1,20 @@
 package main
-
 import (
-		"github.com/PuerkitoBio/goquery"
-		"google.golang.org/grpc"
-    "strings"
-    "fmt"
+    "log"
+    "net"
+pb "./pb"
+    "./service"
+    "google.golang.org/grpc"
 )
-
 func main() {
-  doc, err := goquery.NewDocument("https://kushi-tanaka.com/news/")
-  if err != nil {
-		panic(err)
-  }
-
-	var target string = ""
-	var link string = ""
-
-	doc.Find("div#news-wrap > div > section.news-box span.icon").Each(func(_ int, s *goquery.Selection) {
-		text := strings.TrimSpace(s.Text())
-		if text == "キャンペーン" {
-			ps := s.Parent().Parent().Parent().Find("dt > a")
-			target, _ = ps.Html()
-			link, _  = ps.Attr("href")
-			return
-		}
-  })
-
-	target = strings.TrimSpace(target)
-	link = strings.TrimSpace(link)
-	fmt.Print(target)
-	fmt.Print(link)
+    listenPort, err := net.Listen("tcp", ":19003")
+    if err != nil {
+        log.Fatalln(err)
+    }
+    server := grpc.NewServer()
+    tanakaService := &service.MyTanakaService{}
+    // 実行したい実処理をseverに登録する
+    pb.RegisterTanakaServer(server, tanakaService)
+    server.Serve(listenPort)
 }
+
