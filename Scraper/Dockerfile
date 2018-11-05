@@ -1,6 +1,5 @@
 FROM golang:1-alpine
-
-RUN apk update && apk upgrade && apk add --update --no-cache alpine-sdk tzdata mysql-dev nodejs protobuf
+RUN apk update && apk upgrade && apk add --update --no-cache alpine-sdk tzdata nodejs protobuf
 RUN apk add --update --no-cache \
       bash \
       git \
@@ -13,4 +12,4 @@ RUN apk add --update --no-cache \
 RUN mkdir /go/src/app
 WORKDIR /go/src/app
 
-EXPOSE 5000
+EXPOSE 8080
