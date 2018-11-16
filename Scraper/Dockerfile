@@ -12,4 +12,7 @@ RUN apk add --update --no-cache \
 RUN mkdir /go/src/app
 WORKDIR /go/src/app
 
+RUN go get -u "github.com/PuerkitoBio/goquery"
+RUN go get -u "google.golang.org/grpc"
+
 EXPOSE 8080

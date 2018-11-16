@@ -9,3 +9,10 @@ services:
       - "./scraper/app:/go/src/app"
     # command: go run main.go
     tty: true
+  botter:
+    build: botter
+    ports:
+      - "8081:8081"
+    volumes:
+      - "./botter:/app"
+    tty: true
